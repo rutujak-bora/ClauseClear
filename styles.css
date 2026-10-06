@@ -1,0 +1,30 @@
+/* Custom refinements for ClauseClear */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+textarea {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Smooth transitions */
+button, a {
+  transition: all 0.15s ease-in-out;
+}
+
+/* Custom scrollbars for text areas */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+textarea::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}

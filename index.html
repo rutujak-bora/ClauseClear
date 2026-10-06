@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClauseClear - Plain English Terms & Legal Contract Analyzer</title>
+  <meta name="description" content="Free online tool to scan Terms of Service, rental leases, and contracts into plain English. Detect hidden fees, auto-renewals, arbitration clauses, and predatory terms instantly.">
+  <meta name="keywords" content="terms of service summarizer, contract analyzer, plain english legal, find hidden fees, arbitration clause finder, agreement red flags">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="ClauseClear - Plain English Terms of Service Analyzer">
+  <meta property="og:description" content="Find out what you're actually agreeing to before clicking 'I Agree'. Detect red flags, auto-renewals, and hidden clauses instantly.">
+  <meta property="og:type" content="website">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              900: '#14532d',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans antialiased">
+
+  <!-- TOP HEADER / NAV -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white text-lg font-black shadow-sm">
+          ⚖️
+        </span>
+        <div>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900">Clause<span class="text-brand-600">Clear</span></span>
+          <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-md">Free Legal Scanner</span>
+        </div>
+      </div>
+      
+      <nav class="flex items-center gap-5 text-sm font-medium text-slate-600">
+        <a href="#how-it-works" class="hover:text-slate-900 transition-colors">How It Works</a>
+        <a href="about.html" class="hover:text-slate-900 transition-colors">About</a>
+        <a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy</a>
+        <a href="terms.html" class="hover:text-slate-900 transition-colors">Terms</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ADSENSE TOP BANNER PLACEHOLDER (Leaderboard 728x90) -->
+  <div class="w-full bg-slate-100 border-b border-slate-200 py-2">
+    <div class="max-w-4xl mx-auto flex flex-col items-center justify-center p-3 text-center border-2 border-dashed border-slate-300 rounded-lg min-h-[90px] bg-white">
+      <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Advertisement (Google AdSense Slot 728x90)</span>
+      <!-- Google AdSense script code goes here once approved -->
+      <p class="text-xs text-slate-500 mt-1">Free community tool supported by non-intrusive advertisements</p>
+    </div>
+  </div>
+
+  <!-- MAIN HERO SECTION -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+    <div class="text-center max-w-3xl mx-auto mb-8">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+        Never Click <span class="text-rose-600 line-through">"I Agree"</span> Blindly Again.
+      </h1>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        Paste any Terms of Service, Privacy Policy, or Contract. We scan for predatory clauses, auto-renewals, hidden arbitration, and data selling in seconds.
+      </p>
+    </div>
+
+    <!-- MAIN INTERACTIVE TOOL CONTAINER -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT / TOP: INPUT PANEL -->
+      <section class="lg:col-span-7 bg-white rounded-2xl p-6 shadow-sm border border-slate-200 flex flex-col gap-4">
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <label for="contractInput" class="text-sm font-bold text-slate-800 flex items-center gap-2">
+            <span>📄 Contract / Policy Text</span>
+          </label>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="text-slate-500">Quick Test:</span>
+            <button id="sampleSaas" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 font-medium rounded-lg text-slate-700 transition">SaaS Sub</button>
+            <button id="sampleRental" class="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 font-medium rounded-lg text-slate-700 transition">Rental</button>
+            <button id="sampleFriendly" class="px-2.5 py-1 bg-brand-50 hover:bg-brand-100 text-brand-700 font-medium rounded-lg border border-brand-200 transition">Fair Terms</button>
+          </div>
+        </div>
+
+        <textarea 
+          id="contractInput" 
+          rows="11" 
+          placeholder="Paste contract text, terms of service, or lease clauses here (or select a quick sample above)..." 
+          class="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 font-mono text-xs sm:text-sm text-slate-800 leading-relaxed resize-y bg-slate-50/50"
+        ></textarea>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+          <div class="flex items-center gap-2">
+            <label for="fileUpload" class="cursor-pointer text-xs font-semibold text-slate-600 hover:text-slate-900 border border-slate-300 bg-white hover:bg-slate-50 px-3 py-2 rounded-lg flex items-center gap-1.5 transition">
+              <span>📎 Upload .txt file</span>
+            </label>
+            <input type="file" id="fileUpload" accept=".txt,.md" class="hidden">
+            <button id="clearBtn" class="text-xs text-slate-500 hover:text-slate-800 px-2 py-2">Clear</button>
+          </div>
+
+          <button 
+            id="analyzeBtn" 
+            class="px-6 py-2.5 bg-brand-600 hover:bg-brand-700 active:bg-brand-800 text-white font-bold rounded-xl shadow-sm hover:shadow transition flex items-center gap-2 text-sm"
+          >
+            <span>Scan Contract Now</span>
+            <span>⚡</span>
+          </button>
+        </div>
+
+        <div class="mt-2 text-[11px] text-slate-400 flex items-center gap-1.5">
+          <span class="text-emerald-500">🔒</span> 
+          <span>100% Private: All text is analyzed locally inside your browser. No data is stored on remote servers.</span>
+        </div>
+      </section>
+
+      <!-- RIGHT: SUMMARY SIDEBAR & ADSENSE SLOT -->
+      <aside class="lg:col-span-5 flex flex-col gap-6">
+        
+        <!-- SIDEBAR ADSENSE SLOT (Medium Rectangle 300x250) -->
+        <div class="w-full bg-white p-4 rounded-2xl border border-slate-200 shadow-sm flex flex-col items-center justify-center min-h-[250px] text-center">
+          <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Sponsored Ad (Google AdSense 300x250)</span>
+          <div class="mt-4 p-4 rounded-xl bg-slate-50 border border-dashed border-slate-200 w-full flex flex-col items-center justify-center">
+            <p class="text-xs text-slate-500">Your Google AdSense banner will render automatically in this designated container.</p>
+          </div>
+        </div>
+
+        <!-- QUICK EXPLANATION CARD -->
+        <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-2xl p-6 shadow-sm">
+          <h3 class="text-base font-bold flex items-center gap-2">
+            <span>🛡️ Why Check Your Agreements?</span>
+          </h3>
+          <ul class="mt-3 space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">•</span>
+              <span><strong>87%</strong> of software contracts renew automatically with strict 24–48h notice windows.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-amber-400 font-bold">•</span>
+              <span>Binding arbitration clauses strip your right to join class actions or sue for damages.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-brand-400 font-bold">•</span>
+              <span>Many services grant themselves rights to change pricing without notifying you first.</span>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+    </div>
+
+    <!-- RESULTS SECTION (Initially Hidden) -->
+    <section id="resultsSection" class="hidden mt-12 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+      <div class="border-b border-slate-200 pb-6 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight">Contract Analysis Report</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Heuristic plain-English review of scanned provisions.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <span id="safetyBadge" class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">Analyzing</span>
+        </div>
+      </div>
+
+      <!-- KEY METRICS BAR -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 my-6">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 text-center">
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Words Analyzed</span>
+          <div id="statWords" class="text-2xl font-black text-slate-900 mt-1">0</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 text-center">
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Estimated Read Time</span>
+          <div id="statReadTime" class="text-2xl font-black text-slate-900 mt-1">~0 min</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 text-center col-span-2 sm:col-span-1">
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Consumer Friendliness</span>
+          <div id="statScore" class="text-2xl font-black text-brand-600 mt-1">100/100</div>
+        </div>
+      </div>
+
+      <!-- FINDINGS GRIDS -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <!-- 1. RED FLAGS -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-extrabold text-rose-700 uppercase tracking-wider flex items-center gap-1.5">
+              <span>🚩 High Risk Red Flags</span>
+            </h3>
+          </div>
+          <ul id="redFlagsList" class="space-y-3"></ul>
+        </div>
+
+        <!-- 2. WARNINGS -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-extrabold text-amber-700 uppercase tracking-wider flex items-center gap-1.5">
+              <span>⚠️ Important Caution Items</span>
+            </h3>
+          </div>
+          <ul id="warningsList" class="space-y-3"></ul>
+        </div>
+
+        <!-- 3. POSITIVES -->
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-extrabold text-emerald-700 uppercase tracking-wider flex items-center gap-1.5">
+              <span>✅ Consumer Protections</span>
+            </h3>
+          </div>
+          <ul id="positivesList" class="space-y-3"></ul>
+        </div>
+      </div>
+
+      <!-- LEGAL DISCLAIMER -->
+      <div class="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 text-xs leading-relaxed">
+        <strong>Important Disclaimer:</strong> ClauseClear is an automated educational tool designed to highlight common patterns in standard legal agreements. ClauseClear does not provide legal advice, is not an attorney or law firm, and should not be used as a replacement for formal legal counsel.
+      </div>
+    </section>
+
+    <!-- SEO CONTENT SECTION (How It Works & Educational FAQs) -->
+    <!-- Essential for Google AdSense & SEO Organic Traffic -->
+    <section id="how-it-works" class="mt-16 pt-12 border-t border-slate-200">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">How ClauseClear Protects You</h2>
+        <p class="text-sm text-slate-600 mt-2">Learn what common hidden clauses mean in plain, everyday language.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-xl">
+            🔄
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Subscription & Auto-Renewal Traps</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Many services enroll users in recurring billing that is difficult to cancel. We scan for cancellation time limits (like required 60-day notices) and non-refundable clauses.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center font-bold text-xl">
+            ⚖️
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Arbitration & Jury Waivers</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Standard boilerplate agreements often force users into private binding arbitration, waiving your constitutional right to take complaints before a public court or class action.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white rounded-2xl border border-slate-200 shadow-sm flex flex-col gap-3">
+          <div class="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xl">
+            🔒
+          </div>
+          <h3 class="font-bold text-slate-900 text-base">Data Monetization & Privacy</h3>
+          <p class="text-xs text-slate-600 leading-relaxed">
+            We flag provisions that permit companies to sell user information to data brokers or advertising networks, while noting whether you retain GDPR/CCPA data deletion rights.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER (Mandatory for AdSense compliance) -->
+  <footer class="bg-white border-t border-slate-200 mt-16 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-800">ClauseClear</span>
+        <span>© 2026. All rights reserved.</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="about.html" class="hover:text-slate-900">About Us</a>
+        <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
+        <a href="terms.html" class="hover:text-slate-900">Terms of Use</a>
+        <a href="mailto:support@example.com" class="hover:text-slate-900">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
