@@ -3,14 +3,89 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClauseClear - Plain English Terms & Legal Contract Analyzer</title>
-  <meta name="description" content="Free online tool to scan Terms of Service, rental leases, and contracts into plain English. Detect hidden fees, auto-renewals, arbitration clauses, and predatory terms instantly.">
-  <meta name="keywords" content="terms of service summarizer, contract analyzer, plain english legal, find hidden fees, arbitration clause finder, agreement red flags">
   
-  <!-- Open Graph / Meta -->
-  <meta property="og:title" content="ClauseClear - Plain English Terms of Service Analyzer">
-  <meta property="og:description" content="Find out what you're actually agreeing to before clicking 'I Agree'. Detect red flags, auto-renewals, and hidden clauses instantly.">
+  <!-- Primary Meta Tags -->
+  <title>ClauseClear - Free Plain English Terms of Service & Contract Analyzer</title>
+  <meta name="title" content="ClauseClear - Free Plain English Terms of Service & Contract Analyzer">
+  <meta name="description" content="Free tool to analyze Terms of Service, rental leases, and user agreements in plain English. Detect auto-renewal traps, arbitration waivers, cancellation fees, and data-selling clauses instantly.">
+  <meta name="keywords" content="terms of service summarizer, contract analyzer, plain english legal terms, auto renewal detector, binding arbitration waiver finder, contract safety score, check lease agreement, free legal scanner">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rutujak-bora.github.io/ClauseClear/">
+  <meta name="author" content="ClauseClear">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rutujak-bora.github.io/ClauseClear/">
+  <meta property="og:title" content="ClauseClear - Free Plain English Terms of Service & Contract Analyzer">
+  <meta property="og:description" content="Never click 'I Agree' blindly. Detect predatory terms, auto-renewals, and hidden fees instantly with our free client-side contract scanner.">
+  <meta property="og:image" content="https://rutujak-bora.github.io/ClauseClear/preview.png">
+
+  <!-- Twitter / X -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://rutujak-bora.github.io/ClauseClear/">
+  <meta property="twitter:title" content="ClauseClear - Plain English Terms & Contract Analyzer">
+  <meta property="twitter:description" content="Scan Terms of Service & rental contracts for hidden traps, arbitration clauses, and automatic renewals in seconds.">
+  
+  <!-- Schema.org JSON-LD Structured Data for Google Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://rutujak-bora.github.io/ClauseClear/#app",
+        "name": "ClauseClear",
+        "url": "https://rutujak-bora.github.io/ClauseClear/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "description": "A free privacy-focused legal contract and Terms of Service analyzer that detects predatory clauses, arbitration waivers, and hidden fees.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://rutujak-bora.github.io/ClauseClear/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does ClauseClear detect predatory clauses in contracts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "ClauseClear uses automated pattern recognition and legal heuristic algorithms to identify specific clauses like mandatory binding arbitration, non-refundable charges, unilateral policy modification rights, and automatic subscription renewals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is ClauseClear private and secure?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, 100%. ClauseClear executes entirely client-side in your web browser. None of your text, lease agreements, or contracts are transmitted, saved, or uploaded to any remote server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is an automatic renewal clause and why is it risky?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An auto-renewal clause automatically bills your credit card at the end of each billing cycle unless you cancel within a designated timeframe (often 48 hours to 30 days prior). ClauseClear flags these so you never get surprised by unexpected charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does ClauseClear provide legal advice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. ClauseClear is an educational utility designed to help everyday consumers spot common clauses in public agreements. It is not a law firm and does not substitute for qualified legal counsel."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -40,17 +115,18 @@
   <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white text-lg font-black shadow-sm">
-          ⚖️
-        </span>
-        <div>
+        <a href="index.html" class="flex items-center gap-2">
+          <span class="w-9 h-9 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-white text-lg font-black shadow-sm">
+            ⚖️
+          </span>
           <span class="text-xl font-extrabold tracking-tight text-slate-900">Clause<span class="text-brand-600">Clear</span></span>
-          <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-md">Free Legal Scanner</span>
-        </div>
+        </a>
+        <span class="hidden sm:inline-block ml-2 text-xs font-semibold px-2 py-0.5 bg-brand-50 text-brand-700 border border-brand-200 rounded-md">Free Legal Scanner</span>
       </div>
       
       <nav class="flex items-center gap-5 text-sm font-medium text-slate-600">
         <a href="#how-it-works" class="hover:text-slate-900 transition-colors">How It Works</a>
+        <a href="#faq" class="hover:text-slate-900 transition-colors">FAQ</a>
         <a href="about.html" class="hover:text-slate-900 transition-colors">About</a>
         <a href="privacy.html" class="hover:text-slate-900 transition-colors">Privacy</a>
         <a href="terms.html" class="hover:text-slate-900 transition-colors">Terms</a>
@@ -62,7 +138,6 @@
   <div class="w-full bg-slate-100 border-b border-slate-200 py-2">
     <div class="max-w-4xl mx-auto flex flex-col items-center justify-center p-3 text-center border-2 border-dashed border-slate-300 rounded-lg min-h-[90px] bg-white">
       <span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">Advertisement (Google AdSense Slot 728x90)</span>
-      <!-- Google AdSense script code goes here once approved -->
       <p class="text-xs text-slate-500 mt-1">Free community tool supported by non-intrusive advertisements</p>
     </div>
   </div>
@@ -229,7 +304,6 @@
     </section>
 
     <!-- SEO CONTENT SECTION (How It Works & Educational FAQs) -->
-    <!-- Essential for Google AdSense & SEO Organic Traffic -->
     <section id="how-it-works" class="mt-16 pt-12 border-t border-slate-200">
       <div class="text-center max-w-2xl mx-auto mb-10">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">How ClauseClear Protects You</h2>
@@ -269,6 +343,56 @@
       </div>
     </section>
 
+    <!-- EXPANDED SEO FAQ SECTION (Directly targets organic Google search queries) -->
+    <section id="faq" class="mt-16 pt-12 border-t border-slate-200 max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Frequently Asked Questions</h2>
+        <p class="text-sm text-slate-600 mt-2">Everything you need to know about scanning contracts and terms of service.</p>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-slate-900 cursor-pointer text-sm sm:text-base list-none">
+            <span>How does ClauseClear spot unfair terms in a contract?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            ClauseClear runs real-time heuristic natural language pattern recognition against established legal standards. It checks for binding arbitration clauses, auto-renewals, non-refundable policies, broad intellectual property assignments, and unilateral modification rights without notice.
+          </p>
+        </details>
+
+        <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-slate-900 cursor-pointer text-sm sm:text-base list-none">
+            <span>Is my contract data safe and private when using this tool?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            Yes, completely. Unlike tools that send your documents to third-party cloud servers or large language model APIs, ClauseClear performs 100% of its analysis right inside your browser window. No text, confidential agreements, or names ever leave your device.
+          </p>
+        </details>
+
+        <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-slate-900 cursor-pointer text-sm sm:text-base list-none">
+            <span>What should I do if a contract has red flags?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            If red flags are found (such as an auto-renewal with strict cancellation periods or arbitration waivers), you can: (1) Set calendar reminders before the cancellation window closes, (2) Check if the company provides an arbitration opt-out letter within the first 30 days, or (3) Request the counterparty to strike out specific predatory clauses before signing.
+          </p>
+        </details>
+
+        <details class="group bg-white p-5 rounded-2xl border border-slate-200 shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-slate-900 cursor-pointer text-sm sm:text-base list-none">
+            <span>Is ClauseClear free to use?</span>
+            <span class="text-slate-400 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="mt-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+            ClauseClear is 100% free to use for individuals, students, freelancers, and renters. We sustain the platform through non-intrusive banner advertisements.
+          </p>
+        </details>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER (Mandatory for AdSense compliance) -->
@@ -282,7 +406,8 @@
         <a href="about.html" class="hover:text-slate-900">About Us</a>
         <a href="privacy.html" class="hover:text-slate-900">Privacy Policy</a>
         <a href="terms.html" class="hover:text-slate-900">Terms of Use</a>
-        <a href="mailto:support@example.com" class="hover:text-slate-900">Contact</a>
+        <a href="sitemap.xml" class="hover:text-slate-900">Sitemap</a>
+        <a href="mailto:contact@clauseclear.example" class="hover:text-slate-900">Contact</a>
       </div>
     </div>
   </footer>
